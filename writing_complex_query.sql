@@ -1,0 +1,1 @@
+-- A Sub query is a SELECT statement in another sql statement 
