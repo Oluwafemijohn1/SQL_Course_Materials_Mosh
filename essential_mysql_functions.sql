@@ -32,6 +32,7 @@
 -- SELECT LENGTH('sky');
 -- SELECT UPPER('Hello');
 -- SELECT LOWER('Hello');
+
 -- SELECT LTRIM('  hello');
 -- SELECT RTRIM('hello  ');
 -- SELECT TRIM('  hello  ');
@@ -105,6 +106,7 @@
 
 
 -- The IFNULL and COALESCE Functions
+--  IFNUL
 -- USE sql_store;
 -- SELECT 
 -- 	order_id, 
@@ -113,6 +115,7 @@
 
 
 -- USE sql_store;
+-- COALESCE Functions
 -- SELECT 
 -- 	order_id, 
 --     COALESCE(shipper_id, comments, 'Not Assigned') AS shipper
@@ -120,10 +123,22 @@
 
 
 -- Exercise
-SELECT 
-	CONCAT(first_name, " ", last_name) AS full_name,
-    IFNULL(phone, 'Unknown') AS phone
-    FROM customers
+-- SELECT 
+-- 	CONCAT(first_name, " ", last_name) AS full_name,
+--     IFNULL(phone, 'Unknown') AS phone
+--     FROM customers
+
+-- The IF Function
+-- USE sql_store;
+-- SELECT 
+-- 	order_id, 
+--     order_date,
+--     IF(
+-- 		YEAR(order_date) = YEAR(NOW()),
+--         'Active',
+--         'Achive'
+--     ) AS category
+-- FROM orders
     
 
 
