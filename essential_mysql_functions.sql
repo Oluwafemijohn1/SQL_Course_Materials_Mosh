@@ -139,6 +139,45 @@
 --         'Achive'
 --     ) AS category
 -- FROM orders
+
+
+-- Exercise
+-- USE sql_store;
+-- SELECT 
+-- 	p.product_id, p.name, 
+--     COUNT(*) AS orders, 
+--     IF(COUNT(*) > 1, 'Many times', 'Once') AS frequency
+-- FROM products p 
+-- JOIN order_items USING(product_id) 
+-- GROUP BY product_id, name;
+
+
+-- The CASE operator
+-- USE sql_store;
+-- SELECT 
+-- 	order_id,
+--     CASE
+-- 		WHEN YEAR(order_date) = YEAR(NOW()) THEN 'Active' 
+--         WHEN YEAR(order_date) = YEAR(NOW() -1 ) THEN 'Last year'
+--         WHEN YEAR(order_date) < YEAR(NOW() -1) THEN 'Achive'
+--         ELSE 'Future'
+-- 	END AS category
+-- FROM orders
+
+-- EXERCISE
+USE sql_store;
+SELECT 
+	CONCAT(first_name, " ", last_name) AS full_name,
+    points,
+    CASE
+		WHEN points > 3000 THEN 'GOLD'
+        WHEN points > 2000 THEN 'SILVER'
+        ELSE 'BRONZE'
+	END AS category
+FROM customers
+ORDER BY points DESC
+
+
     
 
 
