@@ -1,2 +1,2 @@
 # SQL_Course_Materials_Mosh
-Learning SQL
+Learning SQL With Coding WithMosh
